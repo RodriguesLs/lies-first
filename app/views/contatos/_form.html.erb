@@ -1,0 +1,37 @@
+<%= form_for(@contato, html: {class: "dark-matter"}) do |f| %>
+  
+  <% if @contato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contato.errors.count, "error") %> prohibited this contato from being saved:</h2>
+
+      <ul>
+      <% @contato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <br/>
+  <h1> Contatos </h1>
+  <div class="field">
+    <%= f.label :nome, "Nome:" %>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email, "E-mail:" %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo_id, "Tipo:" %>
+    <%= f.collection_select(:tipo_id, @tipo_options_for_select, :id, :desc) %>
+    <!-- collection_select(:post, :author_id, Author.all, :id, :name_with_initial, prompt: true) -->
+  </div>
+  <div class="field">
+    <%= f.label :obs, "Descrição:" %>
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Send', class: "button" %>
+    <%= link_to 'Back', contatos_path, class: "button" %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+"pt-BR":
+  activerecord:
+    models:
+      contato:
+        one: "Contato: "
+        other: "Contatos: "
+        
+    attributes:
+      contato:
+        nome: "Nome: "
+        email: "E-mail: "
+        tipo: "Tipo: "
+        obs: "Observação: "
+        
