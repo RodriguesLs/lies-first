@@ -1,10 +1,11 @@
 class ContatosController < ApplicationController
   before_action :set_contato, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_options_for_select, only: [:new, :edit, :update, :create]
+  
   # GET /contatos
   # GET /contatos.json
   def index
-    @contatos = Contato.all
+    @contatos = Contato.order(:nome).page(params[:page]).per(16)
   end
 
   # GET /contatos/1
@@ -15,12 +16,12 @@ class ContatosController < ApplicationController
   # GET /contatos/new
   def new
     @contato = Contato.new
-    options_for_select
+    @contato.build_endereco
   end
 
   # GET /contatos/1/edit
   def edit
-    options_for_select
+    
   end
 
   # POST /contatos
@@ -65,7 +66,7 @@ class ContatosController < ApplicationController
 
   private
   
-    def options_for_select
+    def set_options_for_select
       @tipo_options_for_select = Tipo.all
     end
   
@@ -76,6 +77,8 @@ class ContatosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contato_params
-      params.require(:contato).permit(:nome, :email, :tipo_id, :obs)
+      params.require(:contato).permit(:nome, :email, :tipo_id, :obs, 
+                    endereco_attributes: [:rua, :cidade, :estado], 
+                    telefones_attributes: [:id, :tel, :_destroy])
     end
 end

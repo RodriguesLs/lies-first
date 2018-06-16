@@ -2,8 +2,14 @@
   activerecord:
     models:
       contato:
-        one: "Contato: "
-        other: "Contatos: "
+        one: "Contato"
+        other: "Contatos"
+      endereco:
+        one: "Endereço"
+        other: "Endereços"
+      telefone:
+        one: Telefone
+        other: Telefones
         
     attributes:
       contato:
@@ -11,4 +17,9 @@
         email: "E-mail: "
         tipo: "Tipo: "
         obs: "Observação: "
-        
+      endereco:
+        rua: "Rua: "
+        cidade: "Cidade: "
+        estado: "Estado: "
+      telefone:
+        tel: "Telefone: "

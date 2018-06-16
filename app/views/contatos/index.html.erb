@@ -1,31 +1,33 @@
 <div class="dark-matter">
-<h1>Listando Contatos</h1>
+  
+<h1><%= "#{t('messages.listing')} #{@contatos.model_name.human(count: @contatos.count)}" %></h1>
 
 <table>
   <thead>
     <tr>
-      <th><%= Contato.human_attribute_name("nome") %></th>
-      <th><%= Contato.human_attribute_name("email") %></th>
-      <th><%= Contato.human_attribute_name("tipo") %></th>
-      <th><%= Contato.human_attribute_name("obs") %></th>
+      <th><%= @contatos.human_attribute_name("nome") %></th>
+      <th><%= @contatos.human_attribute_name("email") %></th>
+      <th><%= @contatos.human_attribute_name("tipo") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @contatos.each do |contato| %>
-      <tr>
+      <tr style="background: <%= cycle('#f0f0f5', '#555') %>">
         <td><%= contato.nome %></td>
         <td><%= contato.email %></td>
         <td><%= contato.tipo.desc %></td>
-        <td><%= contato.obs %></td>
-        <td><%= link_to 'Edit', edit_contato_path(contato) %></td>
-        <td><%= link_to 'Destroy', contato, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('buttons.show'), contato%></td>
+        <td><%= link_to t('buttons.edit'), edit_contato_path(contato) %></td>
+        <td><%= link_to t('buttons.destroy'), contato, method: :delete, data: { confirm: t('messages.confirm')} %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<br/>
+<%= paginate @contatos %>
 <br><br><br>
-<%= link_to 'New', new_contato_path, class: "button" %>
-<%= link_to 'Back', home_index_path, class: "button" %>
+<%= link_to t('buttons.new'), new_contato_path, class: "button" %>
+<%= link_to t('buttons.back'), home_index_path, class: "button" %>
 </div>

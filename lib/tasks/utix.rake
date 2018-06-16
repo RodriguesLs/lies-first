@@ -3,7 +3,7 @@ namespace :utix do
     task seed: :environment do
         
         puts "Gerando os contatos..."
-            10.times do |i|
+            100.times do |i|
                 Contato.create!(nome: Faker::Name.name, email: Faker::Internet.email, tipo: Tipo.all.sample, obs: LeroleroGenerator.sentence([1, 2, 3].sample))
             end
         puts "Contatos gerados com sucesso!" 
