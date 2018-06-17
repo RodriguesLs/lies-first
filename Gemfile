@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.4'
+ruby '2.3.0'
 
 gem 'bundler', '>= 1.8.4'
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
