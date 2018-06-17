@@ -3,3 +3,6 @@
         confirm: Tem certeza?
         listing: Listando
         errors: "Erros impediram a gravação dos dados no sistema: "
+        created: "Item criado com sucesso!"
+        updated: "Item atualizado com sucesso!"
+        destroyed: "Item removido com sucesso!"

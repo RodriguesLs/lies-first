@@ -1,6 +1,7 @@
 class ContatosController < ApplicationController
   before_action :set_contato, only: [:show, :edit, :update, :destroy]
   before_action :set_options_for_select, only: [:new, :edit, :update, :create]
+  http_basic_authenticate_with name: "lies", password: "159", only: :destroy
   
   # GET /contatos
   # GET /contatos.json
@@ -31,7 +32,7 @@ class ContatosController < ApplicationController
 
     respond_to do |format|
       if @contato.save
-        format.html { redirect_to @contato, notice: 'Contato was successfully created.' }
+        format.html { redirect_to contatos_path, notice: I18n.t('messages.created') }
         format.json { render :show, status: :created, location: @contato }
       else
         format.html { render :new }
@@ -45,7 +46,7 @@ class ContatosController < ApplicationController
   def update
     respond_to do |format|
       if @contato.update(contato_params)
-        format.html { redirect_to @contato, notice: 'Contato was successfully updated.' }
+        format.html { redirect_to contatos_path, notice: I18n.t('messages.updated') }
         format.json { render :show, status: :ok, location: @contato }
       else
         format.html { render :edit }
@@ -59,7 +60,7 @@ class ContatosController < ApplicationController
   def destroy
     @contato.destroy
     respond_to do |format|
-      format.html { redirect_to contatos_url, notice: 'Contato was successfully destroyed.' }
+      format.html { redirect_to contatos_url, notice: I18n.t('messages.destroy') }
       format.json { head :no_content }
     end
   end

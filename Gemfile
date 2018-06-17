@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-
+gem 'bundler', '>= 1.8.4'
+gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 gem 'kaminari-i18n'
 gem 'kaminari'
 gem 'cocoon'
