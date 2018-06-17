@@ -97,7 +97,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    nokogiri (1.8.2)
+    nokogiri (1.8.3)
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
     pry (0.11.3)
@@ -217,7 +217,7 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 RUBY VERSION
-   ruby 2.3.0p0
+   ruby 2.3.4p301
 
 BUNDLED WITH
-   1.16.2
+   1.15.4
