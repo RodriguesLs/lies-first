@@ -4,7 +4,7 @@ class CreateEnderecos < ActiveRecord::Migration
       t.string :rua
       t.string :cidade
       t.string :estado
-      t.references :contato, index: true, foreign_key: true
+      t.references :contato, index: true, foreign_key: true, on_delete: :cascade
 
       t.timestamps null: false
     end

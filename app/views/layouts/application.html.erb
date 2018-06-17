@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LiesFirst</title>
-  <%= stylesheet_link_tag    'application'%>
-  <%= stylesheet_link_tag    params[:controller]%>
-  <%= javascript_include_tag 'application'%>
-  <%#= javascript_include_tag 'alert'%>
-  <%= javascript_include_tag params[:controller]%>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<script>
-  $.notify('Segundo teste AJAX!', 'info')
-</script>
-
-<%= yield %>
-</body>
+  <head>
+    <title>LiesFirst</title>
+    <%= stylesheet_link_tag    'application'%>
+    <%= stylesheet_link_tag    params[:controller]%>
+    <%= javascript_include_tag 'application'%>
+    <%#= javascript_include_tag 'alert'%>
+    <%= javascript_include_tag params[:controller]%>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+  
+    <!--<script>-->
+    <!--  $.notify('Segundo teste AJAX!', 'info')-->
+    <!--</script>-->
+    <%= yield %>
+  </body>
 </html>
