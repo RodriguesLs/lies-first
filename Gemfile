@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.3.4'
+
 gem 'bundler', '>= 1.8.4'
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
@@ -50,15 +51,11 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
-  
 end
 
 group :production do 
   gem 'pg', '~> 0.18'
   gem 'rails_12factor'
-  gem 'puma'
 end
