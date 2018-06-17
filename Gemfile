@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "2.3.4"
 gem 'bundler', '>= 1.8.4'
 gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
@@ -54,3 +55,7 @@ group :development do
   gem 'spring'
 end
 
+group :production do 
+  gem 'pg'
+  gem 'rails_12factor'
+end
