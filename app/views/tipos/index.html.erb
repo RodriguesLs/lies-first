@@ -4,7 +4,7 @@
   $.notify("<%= notice %>", "success");
   </script>
   
-<h1>Listando os tipos</h1>
+<h1>Kind Listing</h1>
 
 <table>
   <thead>
@@ -15,7 +15,7 @@
 
   <tbody>
     <% @tipos.each do |tipo| %>
-      <tr>
+      <tr style="background: <%= cycle('#f0f0f5', 'white') %>">
         <td><%= tipo.desc %></td>
         <td><%= link_to 'Edit', edit_tipo_path(tipo)%></td>
         <td><%= link_to 'Destroy', tipo, method: :delete, data: { confirm: 'Are you sure?' }%></td>
