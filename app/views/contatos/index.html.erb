@@ -1,4 +1,4 @@
-<div class="dark-matter">
+<div class="dark-matter main-content">
   
   <script>
   $.notify("<%= notice %>", "success");
@@ -29,7 +29,8 @@
 </table>
 <br/>
 <%= paginate @contatos %>
-<br><br><br>
+<div class="background-dark-metter">
+</div>
 <%= link_to t('buttons.new'), new_contato_path, class: "btn btn-warning" %>
 <%= link_to t('buttons.home'), root_path, class: "btn btn-warning" %>
 </div>

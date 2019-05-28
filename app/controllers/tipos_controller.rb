@@ -1,25 +1,17 @@
 class TiposController < ApplicationController
-  before_action :set_tipo, only: [:show, :edit, :update, :destroy]
+  before_action :set_tipo, only: %w[show edit update destroy]
 
-  # GET /tipos
-  # GET /tipos.json
   def index
-    @tipos = Tipo.all
+    @tipos ||= Tipo.all
   end
 
-  # GET /tipos/1
-  # GET /tipos/1.json
-  def show
-  end
+  def show; end
 
-  # GET /tipos/new
   def new
     @tipo = Tipo.new
   end
 
-  # GET /tipos/1/edit
-  def edit
-  end
+  def edit;  end
 
   # POST /tipos
   # POST /tipos.json

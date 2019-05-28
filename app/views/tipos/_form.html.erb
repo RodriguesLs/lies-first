@@ -1,8 +1,7 @@
-<%= form_for(@tipo, html: {class: "dark-matter"}) do |f| %>
+<%= form_for(@tipo, html: {class: "dark-matter main-content kind"}) do |f| %>
   <% if @tipo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@tipo.errors.count, "error") %> prohibited this tipo from being saved:</h2>
-
       <ul>
       <% @tipo.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,10 +9,11 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="background-dark-metter">
+  </div>
   <div class="field">
     <%= f.label :desc, "Descrição:" %>
-    <%= f.text_field :desc %>
+    <%= f.text_field :desc, autofocus: true%>
   </div>
   <div class="actions">
     <%= f.submit "Salvar", class: "button"  %>

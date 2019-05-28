@@ -11,12 +11,7 @@ td {
     color: black;
 }
 
-.test {
-    color: black;
-}
-
 .background-dark-metter{
-
   background: image-url('backone.jpg');      
   width: 100%;
   height: 40em;
@@ -24,7 +19,7 @@ td {
   top: 0;
   z-index: -1;
   left: 0px;
-  filter:opacity(50%);
+  filter: opacity(50%);
   border: 1px solid red;
   border-radius: 2.5em;
 }
@@ -93,7 +88,7 @@ td {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    background: #DFDFDF;
+    background:white;
 }
 
 .dark-matter input[type="text"].fone-field {
