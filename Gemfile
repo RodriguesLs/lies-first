@@ -2,14 +2,19 @@ source 'https://rubygems.org'
 ruby '2.3.4'
 
 gem 'bundler', '>= 1.8.4'
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
-gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
-gem 'kaminari-i18n'
-gem 'kaminari'
 gem 'cocoon'
-gem 'lerolero_generator'
-gem 'rails-i18n'
 gem 'faker'
+gem 'kaminari'
+gem 'kaminari-i18n'
+gem 'lerolero_generator'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-notifyjs'
+end
+
+gem 'rails-i18n'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
